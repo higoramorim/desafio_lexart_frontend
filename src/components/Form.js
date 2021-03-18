@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { addProduct, updateProduct } from '../service/Api';
 import { handleShowProducts } from '../service/handleShowProducts';
 import productContext from '../context/productContext';
@@ -25,6 +25,8 @@ const Form = () => {
 
   const {quantity, price, id, product, client, active, setQuantity, setPrice, setProduct, setClient, setActive, setRefreshTable, editing, setEditing
   } = useContext(productContext);
+
+  const [handleActive, setHandleActive] = useState('active')
 
   const onSubmit = (e) => {
     console.log('onsubmit')
@@ -98,8 +100,8 @@ const Form = () => {
         name="inative"
         id="checkbox"
         value={active}
-        onChange={(e) => {
-          setActive(e.target.value)}
+        onClick={(e) => {
+          setHandleActive(e.target.value)}
         }
         />
         <br />

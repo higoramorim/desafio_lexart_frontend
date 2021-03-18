@@ -1,3 +1,3 @@
-const endpoint = 'https://www.crudcrud.com/api/ec2f0ed38f424fe59297af5edc0fa8e5/ABMStock';
+const endpoint = 'https://www.crudcrud.com/api/7f82056e2fb24d3187b24c8e8f418bd8/ABMStock';
 
 export default endpoint;
