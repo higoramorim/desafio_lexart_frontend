@@ -26,8 +26,6 @@ const Form = () => {
   const {quantity, price, id, product, client, active, setQuantity, setPrice, setProduct, setClient, setActive, setRefreshTable, editing, setEditing
   } = useContext(productContext);
 
-  const [handleActive, setHandleActive] = useState('active')
-
   const onSubmit = (e) => {
     console.log('onsubmit')
     e.preventDefault()
@@ -52,6 +50,8 @@ const Form = () => {
 
     }  
   }
+
+  const toggleChecked = (value) => setActive(value)
 
   return (
     <div className={classes.root}>
@@ -98,10 +98,11 @@ const Form = () => {
         <input 
         type="checkbox" 
         name="inative"
+        //checked={active}
         id="checkbox"
         value={active}
-        onClick={(e) => {
-          setHandleActive(e.target.value)}
+        onChange={(e) => {
+          toggleChecked(e.target.value)}
         }
         />
         <br />
